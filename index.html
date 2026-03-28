@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>APOD Search</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1>Astronomy Picture of the Day</h1>
+      <p>Search NASA APOD by date and save your favourites.</p>
+    </div>
+  </header>
+
+  <main class="container" aria-label="Astronomy Picture of the Day search app">
+    
+    <section class="card" aria-labelledby="search-heading">
+      <h2 id="search-heading">Search by Date</h2>
+      <form id="apodForm" novalidate>
+        <label for="apodDate">Choose a date (no future dates):</label>
+        <div class="form-row">
+          <input
+            type="date"
+            id="apodDate"
+            name="apodDate"
+            required
+            aria-required="true"
+          />
+          <button type="submit">Get APOD</button>
+        </div>
+        <p id="formError" class="error-message" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section class="card" aria-labelledby="result-heading">
+      <h2 id="result-heading">Result</h2>
+      <div id="loading" class="status-message" aria-live="polite" hidden>
+        Loading APOD...
+      </div>
+      <div id="resultContainer" class="result" aria-live="polite">
+      </div>
+    </section>
+
+    <section class="card" aria-labelledby="favourites-heading">
+      <h2 id="favourites-heading">Favourites</h2>
+      <p class="hint">Saved APOD images will appear here.</p>
+      <div id="favouritesList" class="favourites-list">
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>
+        Data from
+        <a href="https://api.nasa.gov/" target="_blank" rel="noreferrer">
+          NASA APOD API
+        </a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
